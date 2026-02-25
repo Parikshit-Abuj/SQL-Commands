@@ -68,3 +68,67 @@ ORDER BY Age;
 SELECT *
 FROM users
 ORDER BY Age DESC;
+
+-- SQL NULL
+-- =========================================
+-- NULL represents missing or unknown data.
+-- It is NOT equal to 0 and NOT equal to empty string ('').
+
+-- =========================================
+-- INSERT NULL VALUE
+-- =========================================
+INSERT INTO users (FirstName, LastName, Email_id, password, Age)
+VALUES ('Rahul', 'Sharma', NULL, 'abc123', 21);
+
+-- =========================================
+-- CHECK FOR NULL VALUES
+-- =========================================
+
+-- Find rows where Email_id is NULL
+SELECT *
+FROM users
+WHERE Email_id IS NULL;
+
+-- Find rows where Email_id is NOT NULL
+SELECT *
+FROM users
+WHERE Email_id IS NOT NULL;
+
+-- =========================================
+-- SQL UPDATE
+-- =========================================
+-- UPDATE is used to modify existing records in a table.
+
+-- Basic Syntax
+UPDATE table_name
+SET column1 = value1,
+    column2 = value2
+WHERE some_column = some_value;
+
+-- =========================================
+-- Example 1: Update single column
+-- =========================================
+UPDATE users
+SET Age = 25
+WHERE FirstName = 'Parikshit';
+
+-- =========================================
+-- Example 2: Update multiple columns
+-- =========================================
+UPDATE users
+SET Age = 26,
+    password = '456'
+WHERE Email_id = 'pa@gmail.com';
+
+-- =========================================
+-- Example 3: Increase age by 1 (calculation)
+-- =========================================
+UPDATE users
+SET Age = Age + 1;
+
+-- =========================================
+-- Example 4: Update with condition
+-- =========================================
+UPDATE users
+SET Age = Age + 1
+WHERE Age > 20;
