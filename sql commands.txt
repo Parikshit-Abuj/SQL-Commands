@@ -1,0 +1,70 @@
+-- =========================================
+-- CREATE TABLE
+-- =========================================
+CREATE TABLE users (
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Email_id VARCHAR(100),
+    password VARCHAR(50),
+    Age INT
+);
+
+-- =========================================
+-- INSERT DATA
+-- =========================================
+INSERT INTO users (FirstName, LastName, Email_id, password, Age)
+VALUES ('Parikshit', 'Abuj', 'pa@gmail.com', '123', 22);
+
+-- =========================================
+-- SELECT COMMANDS
+-- =========================================
+
+-- Select entire table
+SELECT *
+FROM users;
+
+-- Select single column
+SELECT FirstName
+FROM users;
+
+-- Select distinct values from a column
+SELECT DISTINCT password
+FROM users;
+
+-- =========================================
+-- WHERE CLAUSE (Filtering)
+-- =========================================
+
+-- Filter rows where Age > 20
+SELECT FirstName, LastName
+FROM users
+WHERE Age > 20;
+
+-- AND condition (both must be true)
+SELECT *
+FROM users
+WHERE Age > 20 AND FirstName = 'Parikshit';
+
+-- OR condition (any one true)
+SELECT *
+FROM users
+WHERE Age > 20 OR FirstName = 'Parikshit';
+
+-- NOT condition (reverse condition)
+SELECT *
+FROM users
+WHERE NOT Age > 20;
+
+-- =========================================
+-- ORDER BY (Sorting)
+-- =========================================
+
+-- Sort by Age (Ascending - default)
+SELECT *
+FROM users
+ORDER BY Age;
+
+-- Sort by Age (Descending)
+SELECT *
+FROM users
+ORDER BY Age DESC;
