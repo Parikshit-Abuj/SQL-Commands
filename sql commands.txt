@@ -132,3 +132,50 @@ SET Age = Age + 1;
 UPDATE users
 SET Age = Age + 1
 WHERE Age > 20;
+
+-- SQL DELETE
+-- =========================================
+-- Delete specific rows
+DELETE FROM users
+WHERE Age < 18;
+
+-- Delete all rows (table structure remains)
+DELETE FROM users;
+
+-- =========================================
+-- SQL WILDCARDS (Used with LIKE)
+-- =========================================
+
+-- %  → Represents zero, one, or multiple characters
+-- _  → Represents exactly one character
+
+-- Basic Syntax
+SELECT column1, column2
+FROM users
+WHERE column_name LIKE pattern;
+
+-- =========================================
+-- Examples of Wildcards
+-- =========================================
+
+-- Names starting with 'P'
+SELECT *
+FROM users
+WHERE FirstName LIKE 'P%';
+
+-- Names ending with 't'
+SELECT *
+FROM users
+WHERE FirstName LIKE '%t';
+
+-- Names containing 'ri'
+SELECT *
+FROM users
+WHERE FirstName LIKE '%ri%';
+
+-- Second letter must be 'a'
+SELECT *
+FROM users
+WHERE FirstName LIKE '_a%';
+
+
